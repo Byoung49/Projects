@@ -26,3 +26,10 @@ The chatbot also offers a feature where Alex can input specific queries, like "W
     or "How do I join the debate club?", 
         and UniBuddy responds with relevant information, all while adhering to a friendly tone,
         using string transformation methods to ensure the responses feel personalised and engaging.
+
+# Text Based Slot Machine
+in this project i have focussed on using as many of the fundemetal skills within python as possible 
+in order to create a simple text based slot machine. the user inputs a deposit amount and bets a user
+defined amount on 1, 2 or 3 lines.
+the output then tracks winnings, money bet, and total money left over. if the user is to quit the game
+then the user will be shown the amount that they left the game with. 
