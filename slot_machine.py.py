@@ -1,5 +1,15 @@
 import random
 
+print("""
+Hello and welcome to the new full python slot machine game!
+
+you can now tell me your name so that we can personalise the 
+experience specifically for you!
+""")
+
+name = input("What is your preferred name? : ")
+
+
 MAX_LINES = 3
 MAX_BET = 100
 MIN_BET = 1
@@ -67,7 +77,7 @@ def print_slot_machine(columns):
 
 def deposit():
     while True:
-        amount = input("What would you like to deposit? £")
+        amount = input(f"What would you like to deposit {name}? £")
         if amount.isdigit():
             amount = int(amount)
             if amount > 0:
@@ -78,6 +88,7 @@ def deposit():
             print("Please enter a number.")
     return amount 
 
+
 def get_num_of_lines():
     while True:
         lines = input("Enter the number of lines to bet on (1-" + str(MAX_LINES) + ")? ")
@@ -86,14 +97,15 @@ def get_num_of_lines():
             if 1 <= lines <= MAX_LINES:
                 break
             else:
-                print("Enter a vaild number of lines.")
+                print(f" {name} please enter a vaild number of lines.")
         else:
             print("Please enter a number.")
     return lines
 
+
 def get_bet():
     while True:
-        amount = input("What would you like to bet on each line? £")
+        amount = input(f"{name} what would you like to bet on each line? £")
         if amount.isdigit():
             amount = int(amount)
             if MIN_BET <= amount <= MAX_BET:
@@ -104,6 +116,7 @@ def get_bet():
             print("Please enter a number.")
     return amount 
 
+
 def spin(balance):
     lines = get_num_of_lines()
     while True:
@@ -111,7 +124,7 @@ def spin(balance):
         total_bet = bet * lines
 
         if total_bet > balance: 
-            print(f"You do not have enough to bet that amount, your current balance is £{balance} ")
+            print(f"You do not have enough to bet that amount {name}, your current balance is £{balance} ")
         else:
             break
 
@@ -120,8 +133,8 @@ def spin(balance):
     slots = get_solt_machine_spin(ROWS, COLS, symbol_count)
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_values)
-    print(f"You won £{winnings}")
-    print(f"You won on lines:", *winning_lines)
+    print(f"You won £{winnings}, WELL DONE {name}!!!")
+    print(f"You won on line:", *winning_lines)
     return winnings - total_bet
 
 def main():
@@ -133,6 +146,6 @@ def main():
             break
         balance += spin(balance)
    
-    print(f"You left with: £{balance}")
+    print(f"Thank you for playing {name}! You left with: £{balance}")
 
 main()
