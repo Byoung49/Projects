@@ -33,3 +33,8 @@ in order to create a simple text based slot machine. the user inputs a deposit a
 defined amount on 1, 2 or 3 lines.
 the output then tracks winnings, money bet, and total money left over. if the user is to quit the game
 then the user will be shown the amount that they left the game with. 
+
+# Capstone project - NLP Sentiment Analysis 
+in this project i have created an NLP model that uses sentiment analysis to compare amazon reviews
+this project could be further improved by the implement of a for loop to loop through multiple reviews
+however for the purpose of this project we are comparing 2. 
